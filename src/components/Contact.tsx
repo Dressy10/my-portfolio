@@ -19,8 +19,8 @@ const Contact = () => {
                 <span className="contact-icon">📧</span>
                 <div>
                   <strong>Email</strong>
-                  <a href="mailto:deedeeowoeye@gmail.com">
-                    deedeeowoeye@gmail.com
+                  <a href="mailto: samueldressman20@gmail.com">
+                     samueldressman20@gmail.com
                   </a>
                 </div>
               </div>
