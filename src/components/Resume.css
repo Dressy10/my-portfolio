@@ -1,0 +1,167 @@
+.resume {
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.resume-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resume-section {
+  margin-bottom: 4rem;
+}
+
+.resume-section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #2563eb;
+}
+
+.experience-list,
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.experience-item,
+.education-item {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 2rem;
+  border-left: 4px solid #2563eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover,
+.education-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.experience-header,
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.experience-title,
+.education-degree {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.experience-company,
+.education-institution {
+  font-size: 1.1rem;
+  color: #2563eb;
+  font-weight: 500;
+  margin: 0;
+}
+
+.experience-period,
+.education-period {
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.experience-description {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.experience-description li {
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.experience-description li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.experience-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  padding: 0.4rem 0.8rem;
+  background: #e5e7eb;
+  color: #374151;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.education-description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.resume-download {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .resume {
+    padding: 3rem 1rem;
+  }
+
+  .experience-header,
+  .education-header {
+    flex-direction: column;
+  }
+
+  .experience-period,
+  .education-period {
+    align-self: flex-start;
+  }
+
+  .experience-item,
+  .education-item {
+    padding: 1.5rem;
+  }
+}
+
