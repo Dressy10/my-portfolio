@@ -36,6 +36,18 @@ const Projects = () => {
       description: 'Deployed high-performance React frontend with global CDN presence using Azure Static Web Apps. Configured Azure DevOps Build and Release Pipelines with integrated linting and unit testing stages to ensure code quality. Optimized build process with caching strategies, reducing deployment time from 8 minutes to under 3 minutes.',
       technologies: ['Azure DevOps', 'React.js', 'Azure Static Web Apps', 'CI/CD', 'Material UI', 'Build Optimization'],
     },
+    {
+      id: 5,
+      title: 'Secure Serverless Architecture (Property Ladder) | GCP & GitHub Actions',
+      description: 'Architected a zero-trust, full-stack CI/CD pipeline for a real estate application using GitHub Actions. Engineered keyless Google Cloud authentication via OpenID Connect (OIDC) and Workload Identity Federation. Implemented strict DevSecOps gates by integrating Trivy vulnerability scanning and optimizing multi-stage Docker builds to ensure zero-vulnerability container deployments. Deployed a scalable NestJS API to serverless Google Cloud Run, securing database traffic within a private VPC. Integrated Google Secret Manager for dynamic credential injection and automated React Native mobile builds via Expo EAS.',
+      technologies: ['Google Cloud Platform', 'GitHub Actions', 'Docker', 'DevSecOps (Trivy)', 'OIDC/WIF', 'VPC Networking'],
+    },
+    {
+      id: 6,
+      title: 'Autonomous AI Agent (digital employee) | Gemini Pro & Event-Driven GCP Architecture',
+      description: 'Engineered an autonomous, event-driven digital employee "Nora" using Gemini 1.5 Pro to automate complex Google Workspace workflows. Developed a real-time notification system leveraging Gmail Push API and GCP Pub/Sub to trigger serverless AI reasoning cycles upon email arrival. Implemented a sophisticated multi-stage Docker (Alpine) build pipeline to optimize container cold-starts on Google Cloud Run, achieving a 40% reduction in image size. Secured the agentic lifecycle using Google Secret Manager for OAuth2 credential injection and enforced granular, least-privilege IAM policies for Vertex AI and Pub/Sub access. Architected a self-renewing "watch" mechanism to ensure persistent inbox monitoring and automated context-aware drafting based on historical email sentiment.',
+      technologies: ['Google Cloud Platform (GCP)', 'Gemini Pro (Vertex AI)', 'Terraform (IaC)', 'Docker (Alpine)', 'Pub/Sub', 'FastAPI'],
+    },
   ];
 
   return (
