@@ -30,7 +30,7 @@ jobs:
             docker build -t portfolio-site .
 
             echo "Starting new container..."
-            docker run -d -p 80:80 --name portfolio-container portfolio-site
+            docker run -d -p 80:80 --name my-container my-portfolio
 
             echo "Cleaning unused images..."
             docker image prune -f
