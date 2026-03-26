@@ -38,7 +38,7 @@ const Hero = () => {
             <br />
           </h1>
           <p style={{ fontSize: "1.5rem", lineHeight: "1.6" }}>
-            Results-driven DevOps Leader with over 3 years of experience in
+            Results-driven DevOps Engineer with over 3 years of experience in
             architecting scalable, secure, and cost-effective cloud solutions
             within the Azure and AWS ecosystems. Expert in bridging the gap
             between development and operations by implementing robust CI/CD
