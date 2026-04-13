@@ -48,6 +48,12 @@ const Projects = () => {
       description: 'Engineered an autonomous, event-driven digital employee "digital-employee" using Gemini 1.5 Pro to automate complex Google Workspace workflows. Developed a real-time notification system leveraging Gmail Push API and GCP Pub/Sub to trigger serverless AI reasoning cycles upon email arrival. Implemented a sophisticated multi-stage Docker (Alpine) build pipeline to optimize container cold-starts on Google Cloud Run, achieving a 40% reduction in image size. Secured the agentic lifecycle using Google Secret Manager for OAuth2 credential injection and enforced granular, least-privilege IAM policies for Vertex AI and Pub/Sub access. Architected a self-renewing "watch" mechanism to ensure persistent inbox monitoring and automated context-aware drafting based on historical email sentiment.',
       technologies: ['Google Cloud Platform (GCP)', 'Gemini Pro (Vertex AI)', 'Terraform (IaC)', 'Docker (Alpine)', 'Pub/Sub', 'FastAPI'],
     },
+    {
+      id: 7,
+      title: 'Enterprise Infrastructure as Code & Zero-Trust Networking | Terraform & GCP',
+      description: 'Engineered a multi-environment, production-grade cloud architecture for a real estate platform using Terraform. Designed a zero-trust network topology by migrating a PostgreSQL database to a Private VPC with Private Services Access, completely eliminating public IP attack vectors. Configured serverless Google Cloud Run instances with Direct VPC Egress for secure, internal database routing. Implemented modular IaC best practices, including remote state management via GCS buckets, environment-specific variable isolation, and dynamic Secret Manager injections.',
+      technologies: ['Terraform (IaC)', 'GCP VPC Networking', 'Cloud SQL', 'Cloud Run', 'Secret Manager', 'Zero-Trust Architecture'],
+    }
   ];
 
   return (
