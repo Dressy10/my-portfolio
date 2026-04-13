@@ -38,16 +38,16 @@ const Hero = () => {
             <br />
           </h1>
           <p style={{ fontSize: "1.5rem", lineHeight: "1.6" }}>
-            Results-driven DevOps Engineer with over 3 years of experience in
+            Results-driven DevOps Engineer with over four (4) years of experience in
             architecting scalable, secure, and cost-effective cloud solutions
-            within the Azure and AWS ecosystems. Expert in bridging the gap
+            within the Azure, GCP, and AWS ecosystems. Expert in bridging the gap
             between development and operations by implementing robust CI/CD
             frameworks, Infrastructure as Code (IaC), and automated governance
             models.
             <br />I specialize in transforming legacy deployment processes into
             modern, containerized workflows that increase release velocity while
             maintaining 99.9% uptime. A firm believer in the "Security-as-Code"
-            philosophy, I prioritize integrating automated compliance and
+            philosophy. I prioritize integrating automated compliance and
             monitoring early in the SDLC to mitigate risks before they reach
             production. Proven track record of leading cross-functional teams to
             deliver high-stakes projects, from gamified cybersecurity platforms
