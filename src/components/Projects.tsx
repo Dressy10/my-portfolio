@@ -59,6 +59,13 @@ const Projects = () => {
       title: 'Microservices Fintech Ecosystem (Waya) | AWS ECS, GitHub Actions & Nginx',
       description: 'Architected and deployed a highly scalable microservices infrastructure for a unified fintech and social ecosystem encompassing WayaBank, WayaQuick, and WayaGram. Engineered zero-downtime CI/CD pipelines via GitHub Actions to automate dynamic Docker builds, ECR tagging, and deployments across AWS ECS and EC2. Secured the deployment lifecycle using AWS OIDC authentication and AWS Secrets Manager for dynamic credential injection. Configured advanced Nginx reverse proxies to enforce strict CORS policies and manage persistent WebSocket connections for real-time Flutter mobile clients. Orchestrated automated data workflows utilizing Apache Airflow, PostgreSQL, and Redis, resolving complex dependency management through optimized, multi-stage Docker builds.',
       technologies: ['AWS ECS & EC2', 'GitHub Actions', 'Docker', 'Nginx (WebSockets)', 'Apache Airflow', 'AWS Secrets Manager'],
+    },
+    {
+      id: 9,
+      title: 'Serverless FinTech Platform (Ensure Financial) | Next.js, Vercel & Terraform',
+      description: 'Architected a multi-environment CI/CD pipeline for a Next.js application deployed to Vercel\'s Edge Network. Engineered dynamic routing for Production and Staging environments via GitHub Actions, implementing custom deployment aliasing and Git-metadata manipulation to bypass strict vendor billing constraints and provide seamless, login-free QA access. Integrated DevSecOps pre-flight checks (vulnerability auditing, linting) and scoped secrets via GitHub Environments. Utilised Terraform to provision cloud resources and authored comprehensive client-facing documentation for DNS (CNAME) routing and zero-touch SSL provisioning.',
+      technologies: ['Vercel CLI', 'GitHub Actions', 'Terraform (IaC)', 'Next.js', 'DevSecOps', 'DNS Routing'],
+      // liveUrl: 'https://staging-efc-preview-dressytech.vercel.app' // Optional: Include if you want to show the staging link, or wait for the prod link!
     }
   ];
 
