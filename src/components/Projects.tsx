@@ -53,6 +53,12 @@ const Projects = () => {
       title: 'Enterprise Infrastructure as Code & Zero-Trust Networking | Terraform & GCP',
       description: 'Engineered a multi-environment, production-grade cloud architecture for a real estate platform using Terraform. Designed a zero-trust network topology by migrating a PostgreSQL database to a Private VPC with Private Services Access, completely eliminating public IP attack vectors. Configured serverless Google Cloud Run instances with Direct VPC Egress for secure, internal database routing. Implemented modular IaC best practices, including remote state management via GCS buckets, environment-specific variable isolation, and dynamic Secret Manager injections.',
       technologies: ['Terraform (IaC)', 'GCP VPC Networking', 'Cloud SQL', 'Cloud Run', 'Secret Manager', 'Zero-Trust Architecture'],
+    },
+    {
+      id: 8,
+      title: 'Microservices Fintech Ecosystem (Waya) | AWS ECS, GitHub Actions & Nginx',
+      description: 'Architected and deployed a highly scalable microservices infrastructure for a unified fintech and social ecosystem encompassing WayaBank, WayaQuick, and WayaGram. Engineered zero-downtime CI/CD pipelines via GitHub Actions to automate dynamic Docker builds, ECR tagging, and deployments across AWS ECS and EC2. Secured the deployment lifecycle using AWS OIDC authentication and AWS Secrets Manager for dynamic credential injection. Configured advanced Nginx reverse proxies to enforce strict CORS policies and manage persistent WebSocket connections for real-time Flutter mobile clients. Orchestrated automated data workflows utilizing Apache Airflow, PostgreSQL, and Redis, resolving complex dependency management through optimized, multi-stage Docker builds.',
+      technologies: ['AWS ECS & EC2', 'GitHub Actions', 'Docker', 'Nginx (WebSockets)', 'Apache Airflow', 'AWS Secrets Manager'],
     }
   ];
 
