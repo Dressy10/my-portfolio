@@ -49,7 +49,7 @@ const Resume = () => {
         "Resolved critical production bottlenecks by troubleshooting Docker cache invalidation, proxy header misconfigurations, and complex container routing issues to ensure continuous high availability."
       ],
       technologies: ["AWS ECS", "AWS EC2", "GitHub Actions", "Docker Compose", "Nginx", "Apache Airflow", "AWS Secrets Manager", "PostgreSQL", "Redis", "WebSockets"],
-    }
+    },
     {
       id: 3,
       title: "Cloud Support Engineer - Microsoft Azure",
