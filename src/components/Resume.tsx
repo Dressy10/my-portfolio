@@ -40,7 +40,7 @@ const Resume = () => {
       id: 2,
       title: "DevOps Engineer",
       company: "Waya (WayaBank, WayaQuick, WayaGram)",
-      period: "Month Year – Month Year",
+      period: "May 2026 – Present",
       description: [
         "Engineered and maintained zero-downtime CI/CD pipelines using GitHub Actions to automate dynamic Docker builds, ECR tagging, and seamless deployments to AWS ECS.",
         "Configured advanced Nginx reverse proxies to enforce strict CORS policies and manage persistent WebSocket connections, eliminating connection drops for real-time Flutter mobile clients.",
