@@ -20,6 +20,7 @@ interface Education {
 
 const Resume = () => {
   const experiences: Experience[] = [
+    
     {
       id: 1,
       title: "DevOps Engineer",
@@ -37,6 +38,20 @@ const Resume = () => {
     },
     {
       id: 2,
+      title: "DevOps Engineer",
+      company: "Waya (WayaBank, WayaQuick, WayaGram)",
+      period: "Month Year – Month Year",
+      description: [
+        "Engineered and maintained zero-downtime CI/CD pipelines using GitHub Actions to automate dynamic Docker builds, ECR tagging, and seamless deployments to AWS ECS.",
+        "Configured advanced Nginx reverse proxies to enforce strict CORS policies and manage persistent WebSocket connections, eliminating connection drops for real-time Flutter mobile clients.",
+        "Orchestrated automated data workflows by deploying Apache Airflow with PostgreSQL and Redis on AWS EC2, utilizing custom Docker builds to natively bake in Python dependencies.",
+        "Hardened deployment security by implementing AWS OIDC authentication and integrating AWS Secrets Manager for the dynamic, secure injection of SSH keys and environment variables.",
+        "Resolved critical production bottlenecks by troubleshooting Docker cache invalidation, proxy header misconfigurations, and complex container routing issues to ensure continuous high availability."
+      ],
+      technologies: ["AWS ECS", "AWS EC2", "GitHub Actions", "Docker Compose", "Nginx", "Apache Airflow", "AWS Secrets Manager", "PostgreSQL", "Redis", "WebSockets"],
+    }
+    {
+      id: 3,
       title: "Cloud Support Engineer - Microsoft Azure",
       company: "Teknowledge",
       period: "Oct 2022 – July 2025",
@@ -50,7 +65,7 @@ const Resume = () => {
       technologies: ["Azure API Management", "ARM", "Bicep", "REST/SOAP APIs", "Azure Lighthouse", "Cloud Services"],
     },
     {
-      id: 3,
+      id: 4,
       title: "DevOps Engineer (Intern)",
       company: "",
       period: "Jan 2024 – Oct 2024",
