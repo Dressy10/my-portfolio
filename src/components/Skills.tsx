@@ -3,27 +3,43 @@ import "./Skills.css";
 const skillGroups = [
   {
     title: "Cloud Platforms",
-    skills: ["Azure", "Google Cloud", "AWS", "Identity and Access Management"],
-  },
-  {
-    title: "CI/CD",
-    skills: ["Azure DevOps", "Github Actions", "Jenkins", "JIRA"],
-  },
-  {
-    title: "Containers & Orchestration",
-    skills: ["Docker", "Kubernetes"],
+    skills: ["AWS", "Microsoft Azure", "Google Cloud (GCP)", "Oracle Cloud", "Vercel"],
   },
   {
     title: "Infrastructure as Code",
-    skills: ["Terraform", "Bicep"],
+    skills: ["Terraform", "Bicep", "ARM Templates", "Ansible"],
+  },
+  {
+    title: "Containers & Orchestration",
+    skills: ["Docker", "Kubernetes", "AKS", "EKS", "GKE", "Helm", "Azure Container Registry", "Amazon ECR"],
+  },
+  {
+    title: "CI/CD & Automation",
+    skills: ["Azure DevOps", "GitHub Actions", "Jenkins", "GitLab CI/CD", "Google Cloud Build", "Bash", "Python", "JIRA"],
+  },
+  {
+    title: "Mobile Release Engineering",
+    skills: ["Expo", "EAS Build & Submit", "App Store Connect", "Google Play Console", "OTA Updates"],
+  },
+  {
+    title: "Web & Application",
+    skills: ["React Native", "Next.js", "React", "Node.js", "JavaScript", "HTML", "CSS"],
   },
   {
     title: "Monitoring & Observability",
-    skills: ["Prometheus", "Grafana", "Application Insights", "Cloudwatch"],
+    skills: ["Azure Monitor", "Application Insights", "Amazon CloudWatch", "Prometheus", "Grafana", "Google Cloud Monitoring"],
   },
   {
-    title: "Scripting & Web",
-    skills: ["Bash", "Python", "PowerShell", "HTML", "CSS", "Javascript"],
+    title: "Security & Identity",
+    skills: ["IAM", "RBAC", "Least Privilege", "Secrets Management", "Cloud Security Controls"],
+  },
+  {
+    title: "Databases & Operating Systems",
+    skills: ["PostgreSQL", "MySQL", "Linux", "Ubuntu", "CentOS", "RHEL"],
+  },
+  {
+    title: "Workflow Automation",
+    skills: ["n8n", "AI-Powered Workflow Automation"],
   },
 ];
 

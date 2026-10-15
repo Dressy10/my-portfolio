@@ -84,6 +84,59 @@
   margin-bottom: 1rem;
 }
 
+/* min-height stops the layout jumping while the role text swaps */
+.hero-eyebrow {
+  min-height: 1.5em;
+}
+
+.hero-role {
+  display: inline-block;
+  animation: role-in 0.6s ease both;
+}
+
+@keyframes role-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 28px, 0);
+  }
+}
+
+.hero-glow--one {
+  animation: float 11s ease-in-out infinite;
+}
+
+.hero-glow--two {
+  animation: float 14s ease-in-out infinite reverse;
+}
+
+.hero-avatar {
+  animation: avatar-pulse 4s ease-in-out infinite;
+}
+
+@keyframes avatar-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 8px rgba(45, 212, 191, 0.12), 0 20px 50px -10px rgba(45, 212, 191, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(45, 212, 191, 0.05), 0 20px 60px -10px rgba(45, 212, 191, 0.5);
+  }
+}
+
 .hero-title {
   font-size: var(--fs-h1);
   font-weight: 700;
