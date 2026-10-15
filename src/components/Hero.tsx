@@ -1,87 +1,101 @@
 import "./Hero.css";
+import resumePdf from "../assets/Samuel Dressman.pdf";
+
+const socials = [
+  {
+    label: "GitHub",
+    href: "https://github.com/Dressy10",
+    icon: (
+      <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" />
+    ),
+  },
+  {
+    label: "X",
+    href: "https://x.com/SamDressy",
+    icon: (
+      <path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z" />
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/samuel-dressman-a009b5171",
+    icon: (
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+    ),
+  },
+];
 
 const Hero = () => {
   return (
     <section id="home" className="hero">
-      <div className="hero-container">
-        <div className="hero-content">
-          <div className="profile-picture">
-            <div
-              className="profile-placeholder"
-              style={{
-                width: "120px",
-                height: "120px",
-                borderRadius: "50%",
-                overflow: "hidden",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "#e0e0e0",
-              }}
-            >
-              <img
-                src="https://avatars.githubusercontent.com/u/111008110?v=4"
-                alt="Samuel Dressman"
-                width="120"
-                height="120"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  borderRadius: "50%",
-                }}
-              />
-            </div>
-          </div>
-          <h1 className="hero-title">
-            Hi, I'm Samuel Dressman.
-            <br />
-          </h1>
-          <p style={{ fontSize: "1.5rem", lineHeight: "1.6" }}>
-            Results-driven DevOps Engineer with over four (4) years of experience in
-            architecting scalable, secure, and cost-effective cloud solutions
-            within the Azure, GCP, and AWS ecosystems. Expert in bridging the gap
-            between development and operations by implementing robust CI/CD
-            frameworks, Infrastructure as Code (IaC), and automated governance
-            models.
-            <br />I specialize in transforming legacy deployment processes into
-            modern, containerized workflows that increase release velocity while
-            maintaining 99.9% uptime. A firm believer in the "Security-as-Code"
-            philosophy. I prioritize integrating automated compliance and
-            monitoring early in the SDLC to mitigate risks before they reach
-            production. Proven track record of leading cross-functional teams to
-            deliver high-stakes projects, from gamified cybersecurity platforms
-            to high-traffic consumer applications.
-          </p>
-          <div className="social-links">
-            <a
-              href="https://github.com/Dressy10"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              GitHub
-            </a>
-            <span className="separator">|</span>
-            <a
-              href="https://x.com/SamDressy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              X
-            </a>
-            <span className="separator">|</span>
-            <a
-              href="https://www.linkedin.com/in/samuel-dressman-a009b5171"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              LinkedIn
-            </a>
-          </div>
+      <div className="hero-glow hero-glow--one" aria-hidden="true" />
+      <div className="hero-glow hero-glow--two" aria-hidden="true" />
+
+      <div className="container hero-container">
+        <div className="hero-avatar">
+          <img
+            src="https://avatars.githubusercontent.com/u/111008110?v=4"
+            alt="Samuel Dressman"
+            width="144"
+            height="144"
+          />
         </div>
+
+        <p className="hero-eyebrow">DevOps &amp; Cloud Engineer</p>
+        <h1 className="hero-title">
+          Hi, I'm <span className="hero-name">Samuel Dressman</span>.
+        </h1>
+        <p className="hero-lead">
+          I build secure, scalable and cost-effective cloud platforms across Azure, GCP and AWS,
+          turning slow, manual deployments into automated CI/CD, Infrastructure as Code and
+          containerised workflows.
+        </p>
+
+        <div className="hero-actions">
+          <a href="#projects" className="btn btn--primary">
+            View Projects
+          </a>
+          <a
+            href={resumePdf}
+            className="btn btn--ghost"
+            download="Samuel_Dressman_Resume.pdf"
+          >
+            Download Resume
+          </a>
+        </div>
+
+        <ul className="hero-socials">
+          {socials.map((s) => (
+            <li key={s.label}>
+              <a
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-social"
+                aria-label={s.label}
+              >
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                  {s.icon}
+                </svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <ul className="hero-stats">
+          <li>
+            <strong>4+</strong>
+            <span>Years experience</span>
+          </li>
+          <li>
+            <strong>3</strong>
+            <span>Cloud platforms</span>
+          </li>
+          <li>
+            <strong>12</strong>
+            <span>Certifications</span>
+          </li>
+        </ul>
       </div>
     </section>
   );

@@ -96,12 +96,19 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="certifications">
+    <section id="certifications" className="section certifications">
       <div className="container">
-        <h2 className="section-title">Certifications</h2>
+        <div className="section-head reveal">
+          <span className="section-eyebrow">Credentials</span>
+          <h2 className="section-title">Certifications</h2>
+        </div>
         <div className="certifications-grid">
-          {certifications.map((cert) => (
-            <div key={cert.id} className="certification-card">
+          {certifications.map((cert, index) => (
+            <div
+              key={cert.id}
+              className="certification-card reveal"
+              style={{ ['--reveal-delay' as string]: `${(index % 3) * 70}ms` }}
+            >
               <div className="certification-header">
                 <h3 className="certification-name">{cert.name}</h3>
                 {cert.date && <span className="certification-date">{cert.date}</span>}
