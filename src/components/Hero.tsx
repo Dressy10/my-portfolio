@@ -92,7 +92,7 @@ const Hero = () => {
             <span>Cloud platforms</span>
           </li>
           <li>
-            <strong>12</strong>
+            <strong>15</strong>
             <span>Certifications</span>
           </li>
         </ul>
