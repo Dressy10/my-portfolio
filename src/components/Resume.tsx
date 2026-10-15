@@ -20,81 +20,82 @@ interface Education {
 
 const Resume = () => {
   const experiences: Experience[] = [
-    
     {
       id: 1,
       title: "DevOps Engineer",
-      company: "Enbros Technologies Ltd",
-      period: "July 2025 – Present",
+      company: "Enbros Technologies Ltd | London, UK (Remote)",
+      period: "Jul 2025 – Present",
       description: [
-        "Architect and automate end-to-end CI/CD pipelines in Azure DevOps, implementing multi-stage validation gates that significantly accelerates release velocity and improve code quality.",
-        "Manage scalable cloud infrastructures using Terraform and Bicep, leveraging modular Infrastructure as Code (IaC) to ensure consistent environment replication and reduced configuration drift.",
-        "Orchestrate containerized workloads using Docker, ACR, and AKS, optimizing cluster resource allocation and improving application availability.",
-        "Integrate DevSecOps protocols into the software development lifecycle, including automated container image scanning, RBAC implementation, and centralized secret management via Azure Key Vault.",
-        "Develop custom PowerShell and Azure CLI scripts to automate repetitive operational tasks, leading to higher operational efficiency and reduced manual error rates.",
-        "Deploy enterprise-grade monitoring and logging solutions to provide deep visibility into system health, proactively identifying performance bottlenecks and reducing infrastructure overhead costs.",
+        "Built and maintained CI/CD pipelines in Azure DevOps and GitHub Actions for all services deployed to AKS/EKS, raising deployment frequency by 60% and cutting manual release effort by 70%.",
+        "Provisioned Azure, AWS, and GCP environments with Terraform and Bicep, reducing environment setup from days to a few hours.",
+        "Operated Kubernetes workloads with Helm, with monitoring in Azure Monitor and CloudWatch, reducing incident response time by 40%.",
+        "Owned iOS and Android release pipelines (Expo/EAS, App Store Connect, Google Play) and OTA updates, shipping seamless production releases.",
       ],
-      technologies: ["Azure DevOps", "Terraform", "Bicep", "Docker", "ACR", "AKS", "Azure Key Vault", "PowerShell", "Azure CLI"],
+      technologies: ["Azure DevOps", "GitHub Actions", "AKS", "EKS", "Terraform", "Bicep", "Helm", "Azure Monitor", "CloudWatch", "Expo/EAS"],
     },
     {
       id: 2,
-      title: "DevOps Engineer",
-      company: "Waya (WayaBank, WayaQuick, WayaGram)",
-      period: "May 2026 – Present",
+      title: "DevOps Engineer (Contract)",
+      company: "Waya Multi Link Technology Ltd | Lagos, Nigeria (Remote)",
+      period: "May 2026 – Sept 2026",
       description: [
-        "Engineered and maintained zero-downtime CI/CD pipelines using GitHub Actions to automate dynamic Docker builds, ECR tagging, and seamless deployments to AWS ECS.",
-        "Configured advanced Nginx reverse proxies to enforce strict CORS policies and manage persistent WebSocket connections, eliminating connection drops for real-time Flutter mobile clients.",
-        "Orchestrated automated data workflows by deploying Apache Airflow with PostgreSQL and Redis on AWS EC2, utilizing custom Docker builds to natively bake in Python dependencies.",
-        "Hardened deployment security by implementing AWS OIDC authentication and integrating AWS Secrets Manager for the dynamic, secure injection of SSH keys and environment variables.",
-        "Resolved critical production bottlenecks by troubleshooting Docker cache invalidation, proxy header misconfigurations, and complex container routing issues to ensure continuous high availability."
+        "Managed Terraform-provisioned AWS infrastructure (EKS/ECS) for payment and digital-banking services, sustaining 99% availability.",
+        "Automated GitHub Actions to Amazon ECR deployments, cutting lead time for changes by 50%+ under PCI DSS/CBN controls.",
+        "Implemented Prometheus and Grafana monitoring and tuned RDS capacity to handle transaction peaks, reducing latency by 85%.",
       ],
-      technologies: ["AWS ECS", "AWS EC2", "GitHub Actions", "Docker Compose", "Nginx", "Apache Airflow", "AWS Secrets Manager", "PostgreSQL", "Redis", "WebSockets"],
+      technologies: ["AWS", "EKS", "ECS", "Terraform", "GitHub Actions", "Amazon ECR", "Prometheus", "Grafana", "RDS"],
     },
     {
       id: 3,
-      title: "Cloud Support Engineer - Microsoft Azure",
-      company: "Teknowledge",
-      period: "Oct 2022 – July 2025",
+      title: "Cloud Support Engineer",
+      company: "Teknowledge | Lagos, Nigeria (Remote)",
+      period: "Oct 2022 – Jul 2025",
       description: [
-        "Consulted enterprise customers on Azure API Management (APIM) and ARM/Bicep best practices, resulting in a 25% decrease in recurring support requests and improved deployment success rates.",
-        "Acted as a Subject Matter Expert in resolving complex technical issues across REST/SOAP APIs, Azure Lighthouse, and Cloud Services (Extended Support/Classic).",
-        "Performed deep-dive root cause analysis (RCA) by analyzing logs and performance metrics, providing strategic recommendations to stabilize client environments.",
-        "Collaborated with internal Microsoft engineering teams on high-level technical escalations to resolve critical platform-level bugs and service outages.",
-        "Authored technical documentation and deployment guides to empower clients to self-manage their Azure resources effectively.",
+        "Resolved 450+ Azure tickets monthly across APIM, ARM/Bicep, Cloud Services, and Lighthouse, performing log and metric root-cause analysis and escalating with engineering.",
+        "Delivered APIM and ARM best-practice guidance that reduced repeat support requests by 25%.",
       ],
-      technologies: ["Azure API Management", "ARM", "Bicep", "REST/SOAP APIs", "Azure Lighthouse", "Cloud Services"],
+      technologies: ["Azure API Management", "ARM", "Bicep", "Cloud Services", "Azure Lighthouse"],
     },
     {
       id: 4,
       title: "DevOps Engineer (Intern)",
-      company: "",
+      company: "HNG Tech | Lagos, Nigeria (Remote)",
       period: "Jan 2024 – Oct 2024",
       description: [
-        "Automated Linux-based infrastructure management and server maintenance tasks using Bash and Python scripting.",
-        "Contributed to the design and implementation of CI/CD workflows across Jenkins, GitHub, and Azure Pipelines for containerized application deployments.",
-        "Enhanced system reliability by tuning Linux configurations and optimizing resource usage across development and staging environments.",
-        "Configured and managed observability stacks using Prometheus, Grafana, and Azure Monitor to track real-time application health and performance metrics.",
-        "Supported the transition from monolithic to containerized architectures by assisting in Dockerization and Kubernetes pod orchestration.",
+        "Managed and automated Linux-based infrastructure across multiple environments.",
+        "Collaborated on DevOps projects, implementing CI/CD pipelines using Jenkins, GitHub, and Azure DevOps Pipelines and deploying containerized applications with Docker and Kubernetes.",
+        "Optimized system performance by tuning Linux configurations and automating routine server maintenance.",
+        "Implemented and configured monitoring tools like Azure Monitor, Prometheus, and Grafana to track the performance and health of applications and infrastructure.",
+        "Used scripting (Bash, Python) to automate infrastructure provisioning and deployment processes.",
       ],
-      technologies: ["Bash", "Python", "Jenkins", "GitHub Actions", "Azure Pipelines", "Docker", "Kubernetes", "Prometheus", "Grafana", "Azure Monitor", "Linux"],
+      technologies: ["Linux", "Jenkins", "GitHub", "Azure DevOps", "Docker", "Kubernetes", "Azure Monitor", "Prometheus", "Grafana", "Bash", "Python"],
+    },
+    {
+      id: 5,
+      title: "Commerce and Economics Teacher for Secondary Schools",
+      company: "Gold and Silver Int'l College | Gboko, Benue State, Nigeria",
+      period: "Aug 2021 – Jul 2022",
+      description: [
+        "Fostered academic success, which resulted in a 15% increase in student performance.",
+        "Inspired students to achieve excellence, leading to a 20% reduction in academic-related issues.",
+      ],
     },
   ];
 
   const education: Education[] = [
     {
       id: 1,
-      degree: "Higher National Diploma (HND) in Business Administration and Management",
-      institution: "Federal Polytechnic Ado-Ekiti",
-      period: "2018 - 2021",
+      degree: "Higher National Diploma (HND)",
+      institution: "Federal Polytechnic Ado-Ekiti, Ekiti State, Nigeria",
+      period: "Dec 2018 – Mar 2021",
     },
     {
       id: 2,
-      degree: "Ordinary National Diploma (OND) in Business Administration and Management",
-      institution: "Federal Polytechnic Ado-Ekiti",
-      period: "2014 - 2017",
+      degree: "Ordinary National Diploma (OND)",
+      institution: "Federal Polytechnic Ado-Ekiti, Ekiti State, Nigeria",
+      period: "Dec 2014 – Mar 2017",
     },
   ];
-
   return (
     <section id="resume" className="section section--alt resume">
       <div className="container">
