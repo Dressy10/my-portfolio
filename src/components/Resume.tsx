@@ -96,16 +96,19 @@ const Resume = () => {
   ];
 
   return (
-    <section id="resume" className="resume">
+    <section id="resume" className="section section--alt resume">
       <div className="container">
-        <h2 className="section-title">Resume</h2>
+        <div className="section-head reveal">
+          <span className="section-eyebrow">Career</span>
+          <h2 className="section-title">Resume</h2>
+        </div>
 
         <div className="resume-content">
           <div className="resume-section">
             <h3 className="resume-section-title">Experience</h3>
             <div className="experience-list">
               {experiences.map((exp) => (
-                <div key={exp.id} className="experience-item">
+                <div key={exp.id} className="experience-item reveal">
                   <div className="experience-header">
                     <div>
                       <h4 className="experience-title">{exp.title}</h4>
@@ -136,7 +139,7 @@ const Resume = () => {
             <h3 className="resume-section-title">Education</h3>
             <div className="education-list">
               {education.map((edu) => (
-                <div key={edu.id} className="education-item">
+                <div key={edu.id} className="education-item reveal">
                   <div className="education-header">
                     <div>
                       <h4 className="education-degree">{edu.degree}</h4>
@@ -158,7 +161,7 @@ const Resume = () => {
             href={resumePdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="download-button"
+            className="btn btn--dark"
             download="Samuel_Dressman_Resume.pdf"
           >
             Download Resume (PDF)

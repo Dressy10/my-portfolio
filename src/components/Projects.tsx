@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './Projects.css';
 
 interface Project {
@@ -70,48 +71,73 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="projects">
+    <section id="projects" className="section projects">
       <div className="container">
-        <h2 className="section-title">Projects</h2>
+        <div className="section-head reveal">
+          <span className="section-eyebrow">Selected work</span>
+          <h2 className="section-title">Projects</h2>
+        </div>
         <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              <div className="project-technologies">
-                {project.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="project-links">
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    GitHub →
-                  </a>
-                )}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    Live Demo →
-                  </a>
-                )}
-              </div>
-            </div>
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+  const [expanded, setExpanded] = useState(false);
+  const [name, ...subtitle] = project.title.split(' | ');
+
+  return (
+    <article
+      className="project-card reveal"
+      style={{ ['--reveal-delay' as string]: `${(index % 2) * 90}ms` }}
+    >
+      <h3 className="project-title">{name}</h3>
+      {subtitle.length > 0 && <p className="project-subtitle">{subtitle.join(' | ')}</p>}
+      <p className={`project-description ${expanded ? 'expanded' : ''}`}>{project.description}</p>
+      <button
+        className="project-toggle"
+        onClick={() => setExpanded((open) => !open)}
+        aria-expanded={expanded}
+      >
+        {expanded ? 'Show less' : 'Read more'}
+      </button>
+      <div className="project-technologies">
+        {project.technologies.map((tech) => (
+          <span key={tech} className="tech-tag">
+            {tech}
+          </span>
+        ))}
+      </div>
+      {(project.githubUrl || project.liveUrl) && (
+        <div className="project-links">
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              GitHub →
+            </a>
+          )}
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              Live Demo →
+            </a>
+          )}
+        </div>
+      )}
+    </article>
   );
 };
 
