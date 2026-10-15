@@ -1,5 +1,68 @@
+import { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 import resumePdf from "../assets/Samuel Dressman.pdf";
+
+const roles = [
+  "DevOps & Cloud Engineer",
+  "CI/CD & Release Automation",
+  "Infrastructure as Code",
+  "Kubernetes & Containers",
+  "DevSecOps",
+];
+
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Cycles through the roles, fading each one in and out.
+const RotatingRole = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (prefersReducedMotion()) return;
+    const timer = setInterval(() => setIndex((i) => (i + 1) % roles.length), 2800);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <p className="hero-eyebrow" aria-live="off">
+      <span key={index} className="hero-role">
+        {roles[index]}
+      </span>
+    </p>
+  );
+};
+
+// Counts up to `value` once, shortly after mount.
+const Stat = ({ value, suffix = "", label }: { value: number; suffix?: string; label: string }) => {
+  const [shown, setShown] = useState(prefersReducedMotion() ? value : 0);
+  const frame = useRef(0);
+
+  useEffect(() => {
+    if (prefersReducedMotion()) return;
+    const duration = 1400;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setShown(Math.round(value * eased));
+      if (t < 1) frame.current = requestAnimationFrame(tick);
+    };
+
+    frame.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame.current);
+  }, [value]);
+
+  return (
+    <li>
+      <strong>
+        {shown}
+        {suffix}
+      </strong>
+      <span>{label}</span>
+    </li>
+  );
+};
 
 const socials = [
   {
@@ -41,7 +104,7 @@ const Hero = () => {
           />
         </div>
 
-        <p className="hero-eyebrow">DevOps &amp; Cloud Engineer</p>
+        <RotatingRole />
         <h1 className="hero-title">
           Hi, I'm <span className="hero-name">Samuel Dressman</span>.
         </h1>
@@ -83,18 +146,9 @@ const Hero = () => {
         </ul>
 
         <ul className="hero-stats">
-          <li>
-            <strong>4+</strong>
-            <span>Years experience</span>
-          </li>
-          <li>
-            <strong>3</strong>
-            <span>Cloud platforms</span>
-          </li>
-          <li>
-            <strong>15</strong>
-            <span>Certifications</span>
-          </li>
+          <Stat value={4} suffix="+" label="Years experience" />
+          <Stat value={3} label="Cloud platforms" />
+          <Stat value={15} label="Certifications" />
         </ul>
       </div>
     </section>

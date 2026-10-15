@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Navigation.css';
 
 interface NavigationProps {
@@ -19,10 +19,15 @@ const navItems = [
 const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 24);
+
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      progressRef.current?.style.setProperty('--progress', String(progress));
     };
 
     handleScroll();
@@ -89,6 +94,7 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
           ))}
         </ul>
       </nav>
+      <div className="nav-progress" ref={progressRef} aria-hidden="true" />
     </header>
   );
 };

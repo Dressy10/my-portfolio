@@ -13,6 +13,12 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
+      id: 10,
+      title: 'Cloud-Native Logistics & Equipment Hire Platform (Get Set Hire) | Azure, Terraform & Azure DevOps',
+      description: 'Modernised and stabilised the infrastructure, release pipelines and backend services of a full-stack logistics and equipment hire platform running entirely on Microsoft Azure. Codified the whole footprint in modular Terraform for strict parity across Development, Staging and Production, hosting a NestJS API on Linux App Services with Key Vault for secrets, Blob Storage for assets and PostgreSQL for data. Built Azure DevOps release pipelines with dynamic Key Vault secret injection, automated Prisma migrations and zero-downtime ZipDeploy, with real-time build and deploy alerts sent to Google Chat. Supports an AI quote-parsing engine (Azure OpenAI gpt-4o) that turns inbound emails and attachments into quotes, plus delivery-route calculations from depot locations via the Postcodes.io API. Fixed pipeline artefact packaging so Prisma CLI binaries and DATABASE_URL survive zipping, added exponential backoff and quota management to handle Azure AI 429 rate limits, and hardened Azure Managed Redis job queues with a noeviction policy and TCP keepalives to stop idle worker connections being dropped by load balancers.',
+      technologies: ['Azure App Service', 'Terraform (IaC)', 'Azure DevOps', 'Azure Key Vault', 'Azure OpenAI', 'Azure Managed Redis', 'PostgreSQL', 'NestJS', 'Prisma', 'ChatOps'],
+    },
+    {
       id: 1,
       title: 'High-Availability AirBnB Clone | Azure & Jenkins',
       description: 'Transitioned a monolithic application to a containerized architecture with zero-downtime deployments. Designed Blue-Green/Canary deployment strategy using Azure Load Balancer, reducing production incidents by 30%. Architected Jenkins CI/CD pipeline with Docker for environment parity and implemented persistent storage and networking rules within Azure VMs.',
@@ -66,7 +72,8 @@ const Projects = () => {
       title: 'Serverless FinTech Platform (Ensure Financial) | Next.js, Vercel & Terraform',
       description: 'Architected a multi-environment CI/CD pipeline for a Next.js application deployed to Vercel\'s Edge Network. Engineered dynamic routing for Production and Staging environments via GitHub Actions, implementing custom deployment aliasing and Git-metadata manipulation to bypass strict vendor billing constraints and provide seamless, login-free QA access. Integrated DevSecOps pre-flight checks (vulnerability auditing, linting) and scoped secrets via GitHub Environments. Utilised Terraform to provision cloud resources and authored comprehensive client-facing documentation for DNS (CNAME) routing and zero-touch SSL provisioning.',
       technologies: ['Vercel CLI', 'GitHub Actions', 'Terraform (IaC)', 'Next.js', 'DevSecOps', 'DNS Routing'],
-      // liveUrl: 'https://staging-efc-preview-dressytech.vercel.app' // Optional: Include if you want to show the staging link, or wait for the prod link!
+      liveUrl: 'https://calculator.ensurefinancialgroup.com/',
+
     }
   ];
 
