@@ -4,16 +4,40 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-.navbar.scrolled {
-  background: rgba(11, 18, 32, 0.85);
+/*
+ * The frosted background lives on a pseudo-element. Putting backdrop-filter on
+ * .navbar itself would make it the containing block for the position: fixed
+ * mobile menu, collapsing the menu to the height of the bar.
+ */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar.scrolled::before {
+  background: rgba(11, 18, 32, 0.92);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), #3b82f6);
+  transform-origin: left;
+  transform: scaleX(var(--progress, 0));
+  pointer-events: none;
 }
 
 .nav-container {
@@ -150,7 +174,7 @@
     align-items: stretch;
     gap: 0;
     padding: 1rem var(--gutter) 2rem;
-    background: rgba(7, 13, 24, 0.98);
+    background: var(--navy-950);
     overflow-y: auto;
     opacity: 0;
     visibility: hidden;
