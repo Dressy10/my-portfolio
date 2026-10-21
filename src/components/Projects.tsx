@@ -6,12 +6,30 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
+  highlights?: string[];
   githubUrl?: string;
   liveUrl?: string;
 }
 
 const Projects = () => {
   const projects: Project[] = [
+    {
+      id: 11,
+      title: 'Secure, Cost-Capped Internal Developer Platform | AKS, GitOps, Supply-Chain Security & Chaos Engineering',
+      description: 'Built a reference internal developer platform on Azure that lets a team ship a service safely under a hard $50 budget, with security, reliability and cost enforced by code instead of convention. Bootstrapped Terraform remote state and GitHub Actions authentication through OIDC workload identity federation, using separate plan, apply and preview identities, so no long-lived Azure credentials exist anywhere. Added Azure Policy guardrails (allowed regions and VM sizes, required tags, no public storage), budget alerts at $25 and $40, and an Infracost cost diff on every pull request. Compute is treated as cattle: an AKS cluster on the free control-plane tier is created and destroyed on demand, with per-PR preview environments confined to a single namespace so CI never needs cluster-admin. Every image is built, gated by a Trivy scan, given an SBOM with Syft, signed keylessly with Cosign and attested with SLSA provenance, and Kyverno rejects unsigned or foreign images at admission, demonstrated by deliberately deploying bad images. Flux delivers from Git and Argo Rollouts runs canaries that analyse live Prometheus metrics and roll back on their own. A sample payments-ledger service (double-entry transfers, hash-chained audit log) carries SLOs with multi-window burn-rate alerts. A chaos game day with Chaos Mesh (pod kills and injected latency) was measured from the client side and written up as a blameless postmortem, including the measurement mistakes found and corrected along the way.',
+      highlights: [
+        'No long-lived Azure credentials stored: CI authenticates through OIDC only (one free Infracost pricing key is the single non-Azure secret).',
+        'The Trivy gate blocked the first real build on 25 HIGH/CRITICAL CVEs in the Go standard library; fixed by upgrading the toolchain, not by loosening the gate.',
+        'Kyverno rejected both a foreign image and a real-but-unsigned image in our own registry path at admission.',
+        'A deliberately bad release was rolled back automatically by the canary in 180 s from git push.',
+        'Found and fixed a GitOps delay: change propagation dropped from 504 s to 73 s (Flux could not read the Argo Rollout\'s string-typed observedGeneration, so it waited out a 10-minute health-check timeout).',
+        'Chaos game day: killing all three pods caused about 3 s of failed requests and self-healed with no human action (3 runs); 400 ms of injected latency made every request slow and cut client throughput by about 63%.',
+        'Ephemeral by design: the cluster builds in about 17 minutes and costs roughly $0.15 per hour while up (my estimate from list prices), then is destroyed when idle.',
+        'Demo-scale reference, not a production platform: single region and cluster, in-memory demo app, and cluster creation runs from scripts rather than CI.',
+      ],
+      technologies: ['Azure AKS', 'Terraform (IaC)', 'GitHub Actions (OIDC)', 'Azure Policy', 'Flux (GitOps)', 'Argo Rollouts', 'Kyverno', 'Cosign / Sigstore', 'Trivy & Syft (SBOM)', 'SLSA Provenance', 'Prometheus & SLOs', 'Chaos Mesh', 'Infracost (FinOps)'],
+      githubUrl: 'https://github.com/Dressy10/secure-ephemeral-aks-platform',
+    },
     {
       id: 10,
       title: 'Cloud-Native Logistics & Equipment Hire Platform (Get Set Hire) | Azure, Terraform & Azure DevOps',
@@ -106,6 +124,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       <h3 className="project-title">{name}</h3>
       {subtitle.length > 0 && <p className="project-subtitle">{subtitle.join(' | ')}</p>}
       <p className={`project-description ${expanded ? 'expanded' : ''}`}>{project.description}</p>
+      {expanded && project.highlights && (
+        <ul className="project-highlights">
+          {project.highlights.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      )}
       <button
         className="project-toggle"
         onClick={() => setExpanded((open) => !open)}
