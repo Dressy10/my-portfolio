@@ -11,7 +11,7 @@ const skillGroups = [
   },
   {
     title: "Containers & Orchestration",
-    skills: ["Docker", "Kubernetes", "AKS", "EKS", "GKE", "Helm", "Azure Container Registry", "Amazon ECR"],
+    skills: ["Docker", "Kubernetes", "AKS", "EKS", "GKE", "Helm", "Flux (GitOps)", "Argo Rollouts", "Azure Container Registry", "Amazon ECR"],
   },
   {
     title: "CI/CD & Automation",
@@ -31,7 +31,11 @@ const skillGroups = [
   },
   {
     title: "Security & Identity",
-    skills: ["IAM", "RBAC", "Least Privilege", "Secrets Management", "Cloud Security Controls"],
+    skills: ["IAM", "RBAC", "Least Privilege", "OIDC / Workload Identity Federation", "Secrets Management", "Cloud Security Controls", "Azure Policy", "Kyverno", "Cosign / Sigstore", "Trivy", "SBOM & SLSA Provenance"],
+  },
+  {
+    title: "Reliability & FinOps",
+    skills: ["SLOs & Error Budgets", "Burn-Rate Alerting", "Canary Releases", "Chaos Engineering (Chaos Mesh)", "Blameless Postmortems", "Infracost", "Cost Budgets & Guardrails"],
   },
   {
     title: "Databases & Operating Systems",
