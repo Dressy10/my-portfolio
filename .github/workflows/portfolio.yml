@@ -20,23 +20,33 @@ jobs:
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
           port: 22
+          # Stop at the first failing command. Without this a failed step is ignored and the job still
+          # goes green: after the 29 Oct history rewrite `git pull` failed on every deploy, the script
+          # carried on and rebuilt the old code, and the site silently went stale.
+          script_stop: true
           script: |
             cd ~/my-portfolio
 
-            echo "Pulling latest code..."
-            git pull origin main
+            echo "Fetching latest code..."
+            git fetch origin main
+            # reset, not pull: `git pull` refuses to merge when main's history was rewritten (divergent branches).
+            # This directory is only a deploy checkout, so discarding local changes is intended.
+            git reset --hard origin/main
+            echo "Deploying commit $(git rev-parse --short HEAD)"
 
-            echo "Stopping and removing existing container..."
-            docker rm -f my-container || true
-
+            # Build first, then swap the container, so a failed build cannot take the live site down.
             echo "Rebuilding Docker image..."
             docker build -t my-portfolio .
 
-            echo "Starting new container..."
+            echo "Replacing the running container..."
+            docker rm -f my-container || true
             docker run -d -p 8080:80 --name my-container my-portfolio
+
+            echo "Checking the container is running..."
+            docker ps --filter name=my-container --filter status=running --format '{{.Names}}' | grep -q my-container
 
             echo "Cleaning unused images..."
             docker image prune -f
 
             echo "Deployment complete!"
-            
+
