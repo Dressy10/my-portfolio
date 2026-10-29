@@ -11,7 +11,7 @@ const skillGroups = [
   },
   {
     title: "Containers & Orchestration",
-    skills: ["Docker", "Kubernetes", "AKS", "EKS", "GKE", "Helm", "Flux (GitOps)", "Argo Rollouts", "Azure Container Registry", "Amazon ECR"],
+    skills: ["Docker", "Kubernetes", "AKS", "EKS", "GKE", "Helm", "Flux (GitOps)", "Argo Rollouts", "Azure Container Apps", "Azure Front Door", "Azure Container Registry", "Amazon ECR"],
   },
   {
     title: "CI/CD & Automation",
@@ -35,11 +35,11 @@ const skillGroups = [
   },
   {
     title: "Reliability & FinOps",
-    skills: ["SLOs & Error Budgets", "Burn-Rate Alerting", "Canary Releases", "Chaos Engineering (Chaos Mesh)", "Blameless Postmortems", "Infracost", "Cost Budgets & Guardrails"],
+    skills: ["SLOs & Error Budgets", "Burn-Rate Alerting", "Canary Releases", "Chaos Engineering (Chaos Mesh)", "Blameless Postmortems", "Disaster Recovery (RPO/RTO)", "Multi-Region Architecture", "Failover Drills", "Infracost", "Cost Budgets & Guardrails"],
   },
   {
     title: "Databases & Operating Systems",
-    skills: ["PostgreSQL", "MySQL", "Linux", "Ubuntu", "CentOS", "RHEL"],
+    skills: ["PostgreSQL", "MySQL", "Azure Cosmos DB", "Linux", "Ubuntu", "CentOS", "RHEL"],
   },
   {
     title: "Workflow Automation",
